@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+
+ html, body {
+    margin:0;
+    padding:0;
+    height: 100%;
+}
+        
+       p { background-color: #808080;
+    color: Purple;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px 8px 0 0;}
+        
+        
+#background {
+    background-color:black;
+    background-size: 100% 100%;
+    min-height:100%;
+}
+
+ <!-- background : #000000 url("http://pascocountyflattorney.com/wp-content/uploads/2012/07/tokyo-blue-background-4547.jpg") no-repeat bottom left;-->
+   

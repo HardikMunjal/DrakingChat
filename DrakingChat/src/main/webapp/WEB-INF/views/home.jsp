@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html>
 
+
+<head>
 <!-- Angular js libraries -->
 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
@@ -17,219 +19,120 @@
 <!-- Bootstrap Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/MonochromicBackground.css" />">
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script src="<c:url value="/resources/javascript/WidthRatioUncheckrd.js" />"></script>
 
 
-<script>
-function htmlbodyHeightUpdate(){
-	var height3 = $( window ).height()
-	var height1 = $('.nav').height()+50
-	height2 = $('.main').height()
-	if(height2 > height3){
-		$('html').height(Math.max(height1,height3,height2)+10);
-		$('body').height(Math.max(height1,height3,height2)+10);
-	}
-	else
-	{
-		$('html').height(Math.max(height1,height3,height2));
-		$('body').height(Math.max(height1,height3,height2));
-	}
-	
-}
-$(document).ready(function () {
-	htmlbodyHeightUpdate()
-	$( window ).resize(function() {
-		htmlbodyHeightUpdate()
-	});
-	$( window ).scroll(function() {
-		height2 = $('.main').height()
-			htmlbodyHeightUpdate()
-	});
-});
-</script>
 
-<style>
-/* Background Gradient for Monochromatic Colors */
-body {
-   
-   
-    background-color: #DEFFE9;
-    /* For WebKit (Safari, Chrome, etc) */
-    background: #DEFFE9 -webkit-gradient(linear, left top, left bottom, from(#D9B19C), to(#DEFFE9)) no-repeat;
-    /* Mozilla,Firefox/Gecko */
-    background: #DEFFE9 -moz-linear-gradient(top, #D9B19C, #DEFFE9) no-repeat;
-    /* IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9B19C, endColorstr=#DEFFE9) no-repeat;
-    /* IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#D9B19C, endColorstr=#D9B19C)" no-repeat;
-    }
-    .profile-userpic img {
-  float: none;
-  margin: 0 auto;
-  width: 50%;
-  height: 50%;
-  -webkit-border-radius: 50% !important;
-  -moz-border-radius: 50% !important;
-  border-radius: 50% !important;
-}
-    /* Background Gradient for Monochromatic Colors */
 
-    body,html{
-		height: 100%;
-	}
 
-	/* remove outer padding */
-	.main .row{
-		padding: 0px;
-		margin: 0px;
-	}
 
-	/*Remove rounded coners*/
 
-	nav.sidebar.navbar {
-		border-radius: 0px;
-	}
 
-	nav.sidebar, .main{
-		-webkit-transition: margin 200ms ease-out;
-	    -moz-transition: margin 200ms ease-out;
-	    -o-transition: margin 200ms ease-out;
-	    transition: margin 200ms ease-out;
-	}
 
-	/* Add gap to nav and right windows.*/
-	.main{
-		padding: 10px 10px 0 10px;
-	}
 
-	/* .....NavBar: Icon only with coloring/layout.....*/
 
-	/*small/medium side display*/
-	@media (min-width: 768px) {
 
-		/*Allow main to be next to Nav*/
-		.main{
-			position: absolute;
-			width: calc(100% - 40px); /*keeps 100% minus nav size*/
-			margin-left: 40px;
-			float: right;
-		}
 
-		/*lets nav bar to be showed on mouseover*/
-		nav.sidebar:hover + .main{
-			margin-left: 200px;
-		}
 
-		/*Center Brand*/
-		nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-			margin-left: 0px;
-		}
-		/*Center Brand*/
-		nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
-			text-align: center;
-			width: 100%;
-			margin-left: 0px;
-		}
 
-		/*Center Icons*/
-		nav.sidebar a{
-			padding-right: 13px;
-		}
+<!--Angular Library-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
-		/*adds border top to first nav box */
-		nav.sidebar .navbar-nav > li:first-child{
-			border-top: 1px #e5e5e5 solid;
-		}
-
-		/*adds border to bottom nav boxes*/
-		nav.sidebar .navbar-nav > li{
-			border-bottom: 1px #e5e5e5 solid;
-		}
-
-		/* Colors/style dropdown box*/
-		nav.sidebar .navbar-nav .open .dropdown-menu {
-			position: static;
-			float: none;
-			width: auto;
-			margin-top: 0;
-			background-color: transparent;
-			border: 0;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-		}
-
-		/*allows nav box to use 100% width*/
-		nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
-			padding: 0 0px 0 0px;
-		}
-
-		/*colors dropdown box text */
-		.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-			color: #777;
-		}
-
-		/*gives sidebar width/height*/
-		nav.sidebar{
-			width: 200px;
-			height: 100%;
-			margin-left: -160px;
-			float: left;
-			z-index: 8000;
-			margin-bottom: 0px;
-		}
-
-		/*give sidebar 100% width;*/
-		nav.sidebar li {
-			width: 100%;
-		}
-
-		/* Move nav to full on mouse over*/
-		nav.sidebar:hover{
-			margin-left: 0px;
-		}
-		/*for hiden things when navbar hidden*/
-		.forAnimate{
-			opacity: 0;
-		}
-	}
-
-	/* .....NavBar: Fully showing nav bar..... */
-
-	@media (min-width: 1330px) {
-
-		/*Allow main to be next to Nav*/
-		.main{
-			width: calc(100% - 200px); /*keeps 100% minus nav size*/
-			margin-left: 200px;
-		}
-
-		/*Show all nav*/
-		nav.sidebar{
-			margin-left: 0px;
-			float: left;
-		}
-		/*Show hidden items on nav*/
-		nav.sidebar .forAnimate{
-			opacity: 1;
-		}
-	}
-
-	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
-		color: #CCC;
-		background-color: transparent;
-	}
-
-	nav:hover .forAnimate{
-		opacity: 1;
-	}
-	section{
-		padding-left: 15px;
-	}
+<!--Bootstrap Library-->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 
+
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/style.css" />">
+
+
+<script src="<c:url value="/resources/javascript/jquery-cookie.js" />"></script>
+
+
+
+
+
+    <style>/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+    </style>
+
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/style.css" />">
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/MenuIcons.css" />">
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/GlobalPage.css" />">
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/MovingImages.css" />">
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/PanelShadow.css" />">
+
+
+<script src="<c:url value="/resources/javascript/UserDefined/CookieOnPageLoading.js" />"></script>
+<script src="<c:url value="/resources/javascript/UserDefined/MovingImages.js" />"></script>
+<script src="<c:url value="/resources/javascript/UserDefined/Angular/AngularCart.js" />"></script>
+
+
+   
+
+  
+   
+
+
+<style type="text/css">
+    
+    .menu-disabled-true {
+     color: red;
+     }
+    
 </style>
 
+    
 
+</head>
 <body>
 
 <nav class="navbar navbar-inverse sidebar" role="navigation">
@@ -244,7 +147,7 @@ body {
 			</button>
 			<a class="navbar-brand" href="#">Hardik Munjal</a>
 				<div class="profile-userpic">
-					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+					<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p200x200/11083866_950312875013030_7885465492717904463_n.jpg?oh=7a30e797d1c5cb3f5a99ef2d9d4461c2&oe=55FAA592&__gda__=1441179641_cdd3fe3d799fc29e871a8dc95b1f3eaa" class="img-responsive" alt="">
 				</div>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -286,14 +189,96 @@ body {
 </nav>
 <div class="main">
 <!-- Content Here -->
-<div ng-app="">
+  <div id="check"></div>
 
- 
-<p>Input something in the input box:</p>
-<p>Name: <input type="text" ng-model="name"></p>
-<p ng-bind="name"></p>
+        <ul id="menu">
+  <li><a href="/DrakaPlatform">Why Draka</a></li>
+  <li><a href="/Stylised Menu">Menu</a></li>
+  <li><a href="/grid">Grid</a></li>
+  <li><a href="/3d">3d transformation</a></li>
+</ul> 
+       
 
+
+
+<form ng-submit="OnSubmit()" ng-controller="StartUpController">
+
+Starting: <input ng-change="computeNeeded()" ng-model="funding.startingEstimate">
+Recommendation: {{funding.needed}}
+
+<button>Fund mystartup</button>
+</form>
+                  
+
+       
+       <div id="H1">     <img class="example" id="H" src=<c:url value="/resources/Images/H.gif"/>  style="position:absolute; left: 500; top: 100; width: 35px; height: 50px;"></div>
+       <div id="A1">     <img class="example" id="A" src=<c:url value="/resources/Images/A.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;"></div> 
+       <div id="R1">     <img class="example" src=<c:url value="/resources/Images/R.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;"> </div>
+       <div id="D1">     <img class="example" src=<c:url value="/resources/Images/D.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
+       <div id="I1">     <img class="example" src=<c:url value="/resources/Images/I.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
+       <div id="K1">     <img class="example" src=<c:url value="/resources/Images/K.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
+       <div id="M1">     <img class="example" id="M" src=<c:url value="/resources/Images/M.gif"/>  style="position:absolute; left: 500; top: 100; width: 35px; height: 50px;"></div>         
+       <div id="U1">     <img class="example" id="U" src=<c:url value="/resources/Images/U.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;"></div> 
+       <div id="N1">     <img class="example" src=<c:url value="/resources/Images/N.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;"> </div>
+       <div id="Z1">     <img class="example" src=<c:url value="/resources/Images/Z.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
+       <div id="A2">     <img class="example" src=<c:url value="/resources/Images/A.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
+       <div id="A3">     <img class="example" src=<c:url value="/resources/Images/A.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
+       <div id="A4">     <img class="example" src=<c:url value="/resources/Images/A.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
+       <div id="L1">     <img class="example" src=<c:url value="/resources/Images/L.gif"/> style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
+         
+         
+<br><br><br><br>
+<input type=button onClick=ask() value='Draka Is Coming'>
+<input type=button onClick=reset1() value='Get Original'>
+<div id='msg'></div>
+
+            
+
+    <div ng-controller='DeathrayMenuController'>
+<ul>
+<li class='menu-disabled-{{isDisabled}}' ng-click='stun()'>Change my color :)</li>
+
+</ul>
+<div/>
+
+        <p>oops, jquery cookie</p>
+
+        <div ng-controller="MyCtrl">
+       <input type="text" ng-model="foo" placeholder="Enter something" />
+       <input type="button" ng-click="doSomething()" value="Send" ng-disabled="foo == null" />
+   </div>
+       
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<img src=Images/H.gif  style="position:absolute; left: 500; top: 100; width: 35px; height: 50px;">
+		</div>
+		<div class="back">
+			<img src=Images/A.gif  style="position:absolute; left: 500; top: 100; width: 35px; height: 50px;">
+		</div>
+	</div>
 </div>
+
+
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+
+
+        $.cookie.json = true;
+
+     var user = [{ name: "name", age: 25 },{ name: "name", age: 25 }]
+
+     user.push({ name: "hardik", age: 25 });
+
+$.cookie('user', user);
+var currentUser = $.cookie('user');
+alert('User name is ' + currentUser[2].name);
+    });
+});
+</script>
+
+
 
 
 

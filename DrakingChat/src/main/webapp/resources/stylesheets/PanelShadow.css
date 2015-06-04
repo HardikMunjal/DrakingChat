@@ -1,0 +1,8 @@
+@CHARSET "ISO-8859-1";
+div #check{
+    width: 1375px;
+    height: 50px;
+    padding: 25px;
+    background-color: WhiteSmoke;
+    box-shadow: 10px 10px 5px grey;
+}

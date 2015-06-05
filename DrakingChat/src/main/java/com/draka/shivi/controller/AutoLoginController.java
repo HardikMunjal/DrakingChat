@@ -26,6 +26,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -92,9 +93,11 @@ public class AutoLoginController {
   //AutoLoginResponse response = (AutoLoginResponse) restTemplate.getForObject(url, AutoLoginResponse.class);
   
  
-  String a=response.toString();
+  String a=response.getBody().toString();
   
-  String b=response.getBody();
+
+  
+  //String b=response.getBody();
   
   
   
@@ -104,23 +107,77 @@ public class AutoLoginController {
   
   
   
+ 
+  
   
  System.out.println(response);
+ System.out.println(a);
+ 
   //System.out.println(response.toString());
-  System.out.println(request.getBody().toString());
+  System.out.println(request.getBody());
   System.out.println(request.getHeaders());
-  redirectAttributes.addAttribute("b", b);  
+  redirectAttributes.addAttribute("b", a);  
   return "redirect:mapping2";
   
   
 	}
+
 @RequestMapping(value = "FetchUserDetails/mapping2", method = RequestMethod.GET)
-public void handleBar(@ModelAttribute("b") String b)
+public @ResponseBody AutoLoginResponse handleBar(@ModelAttribute("b") String b)
 {
-  String abc= b;
-  String bb= abc;
+  String token= b;
+  String bb= token;
+  
+  
+  
+	RestTemplate restTemplate = new RestTemplate();
+	   
+String url="https://graph.facebook.com/me?"+token+""; 
+
+
+System.out.println(url);
+
+List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+
+
+//messageConverters.add(new FormHttpMessageConverter());
+messageConverters.add(new MappingJacksonHttpMessageConverter());
+//messageConverters.add(new StringHttpMessageConverter());
+
+restTemplate.setMessageConverters(messageConverters);
+
+//String result = restTemplate.getForObject("http://example.com/hotels?code={code}", String.class,""+code+"");
+//ResponseEntity<String> response= restTemplate.getForEntity(url, String.class);
+
+AutoLoginResponse response = (AutoLoginResponse) restTemplate.getForObject(url, AutoLoginResponse.class);
+
+AutoLoginResponse ar=new AutoLoginResponse();
+ar.setBirthday(response.birthday);
+
+ar.setFirstName(response.first_name);
+
+//String b2=response.first_name;
+//String a=response.toString();
+
+//System.out.println(response.id);
+System.out.println(response.first_name);
+System.out.println(response.last_name);
+System.out.println(response.name);
+System.out.println(response.email);
+System.out.println(response.birthday);
+System.out.println(response.gender);
+//System.out.println(a);
+
+
+//System.out.println(b2);
+
+
+
   // do the job
  System.out.println(bb);
+ System.out.println(response);
+ 
+ return ar;
 }
 
 

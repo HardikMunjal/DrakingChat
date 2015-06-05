@@ -9,8 +9,12 @@ public class AutoLoginResponse {
 
 	
     public String first_name;
-    public String access_token;
-    public int id;
+    public String last_name;
+    public String gender;
+    public String email;
+    public String name;
+    public String birthday;
+    //public int id;
     
     
     @JsonProperty("first_name")
@@ -23,17 +27,57 @@ public class AutoLoginResponse {
         this.first_name = first_name;
     
     }
-@JsonProperty("access_token")
-    
-    public String getAccess_token() {
-        return access_token;
-    }
+    @JsonProperty("last_name")
+	public String getLast_name() {
+		return last_name;
+	}
 
-    public void setAccess_token(String access_token) {
-        this.access_token = access_token;
-    
-    }
-    
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+
+	@JsonProperty("gender")
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	@JsonProperty("email")
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@JsonProperty("name")
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+	@JsonProperty("birthday")
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	
+	
+
+ 
+ /*   
  @JsonProperty("id")
     
     public int id() 
@@ -45,4 +89,5 @@ public class AutoLoginResponse {
         this.id = id;
     
     }
+    */
 }

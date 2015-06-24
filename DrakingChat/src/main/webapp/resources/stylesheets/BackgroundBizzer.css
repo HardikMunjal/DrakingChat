@@ -1,0 +1,32 @@
+@CHARSET "ISO-8859-1";
+
+ 
+
+.bizarlink {
+  color: #000; text-decoration: none; background: white;
+  font-size: .9em; font-family: Arial;
+  display: inline-block; overflow: hidden; vertical-align: top; 
+  perspective: 600px; 
+  perspective-origin: 50% 50%;
+}
+.bizarlink span {
+  display: block; position: relative; padding: 1.5em 3em;
+  transition: all 400ms ease;
+  transform-origin: 50% 0%;
+  transform-style: preserve-3d;
+}
+.bizarlink:hover {color: #fff; }
+.bizarlink:hover span {
+  background: #000 color: white;
+  transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+}
+.bizarlink span:after {
+    content: attr(data-content);
+    display: inline-block;position: absolute; left: 0; top: 0; right:0; bottom: 0;
+    padding: 1.5em 3em;
+    color: #fff; background: #000; 
+    transform-origin: 50% 0%;
+    transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+ }
+ 
+ 

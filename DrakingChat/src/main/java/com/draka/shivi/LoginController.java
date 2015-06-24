@@ -20,6 +20,8 @@ public class LoginController {
  public ModelAndView getLoginForm(@RequestParam(required = false) String authfailed, String logout,String denied) {  
   String message = ""; 
   
+  
+  
   if (authfailed != null) {  
    message = "Invalid username of password, try again !";  
   } else if (logout != null) {  

@@ -1,125 +1,41 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <%@ page session="false" %>
-
 <!DOCTYPE html>
 <html>
-
-
 <head>
+
 <!-- Angular js libraries -->
 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-
 <!-- Bootrsap css -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
 <!-- Bootstrap Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/MonochromicBackground.css" />">
-
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
 <script src="<c:url value="/resources/javascript/WidthRatioUncheckrd.js" />"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--Angular Library-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-
 <!--Bootstrap Library-->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-
-
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/style.css" />">
-
-
 <script src="<c:url value="/resources/javascript/jquery-cookie.js" />"></script>
-
-
-
-
-
-    <style>/* entire container, keeps perspective */
-.flip-container {
-	perspective: 1000;
-}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
-
-.flip-container, .front, .back {
-	width: 320px;
-	height: 480px;
-}
-
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-
-	position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-/* front pane, placed above back */
-.front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
-}
-
-/* back, initially hidden pane */
-.back {
-	transform: rotateY(180deg);
-}
-    </style>
-
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/style.css" />">
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/MenuIcons.css" />">
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/GlobalPage.css" />">
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/MovingImages.css" />">
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/PanelShadow.css" />">
-
-
+<!--   <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/Flipper.css" />">  -->
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/Flipcard.css" />">
+<link rel="stylesheet" href= "<c:url value="/resources/stylesheets/BackgroundBizzer.css" />">
 <script src="<c:url value="/resources/javascript/UserDefined/CookieOnPageLoading.js" />"></script>
 <script src="<c:url value="/resources/javascript/UserDefined/MovingImages.js" />"></script>
 <script src="<c:url value="/resources/javascript/UserDefined/Angular/AngularCart.js" />"></script>
-
-
-   
-
-  
-   
+<script src="<c:url value="/resources/javascript/UserDefined/JavascriptCookiePush.js" />"></script>
 
 
 <style type="text/css">
@@ -127,14 +43,14 @@
     .menu-disabled-true {
      color: red;
      }
-    
 </style>
 
-    
+
 
 </head>
-<body>
 
+
+<body>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -187,6 +103,7 @@
 		</div>
 	</div>
 </nav>
+
 <div class="main">
 <!-- Content Here -->
   <div id="check"></div>
@@ -197,10 +114,6 @@
   <li><a href="/grid">Grid</a></li>
   <li><a href="/3d">3d transformation</a></li>
 </ul> 
-       
-
-
-
 <form ng-submit="OnSubmit()" ng-controller="StartUpController">
 
 Starting: <input ng-change="computeNeeded()" ng-model="funding.startingEstimate">
@@ -208,9 +121,9 @@ Recommendation: {{funding.needed}}
 
 <button>Fund mystartup</button>
 </form>
-                  
 
-       
+<div align="left">
+
        <div id="H1">     <img class="example" id="H" src=<c:url value="/resources/Images/H.gif"/>  style="position:absolute; left: 500; top: 100; width: 35px; height: 50px;"></div>
        <div id="A1">     <img class="example" id="A" src=<c:url value="/resources/Images/A.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;"></div> 
        <div id="R1">     <img class="example" src=<c:url value="/resources/Images/R.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;"> </div>
@@ -225,69 +138,39 @@ Recommendation: {{funding.needed}}
        <div id="A3">     <img class="example" src=<c:url value="/resources/Images/A.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
        <div id="A4">     <img class="example" src=<c:url value="/resources/Images/A.gif"/>  style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
        <div id="L1">     <img class="example" src=<c:url value="/resources/Images/L.gif"/> style="position:absolute; left: 500; top: 100; width: 30px; height: 40px;">  </div>
-         
+
+      </div>
+      
          
 <br><br><br><br>
 <input type=button onClick=ask() value='Draka Is Coming'>
 <input type=button onClick=reset1() value='Get Original'>
 <div id='msg'></div>
-
-            
-
-    <div ng-controller='DeathrayMenuController'>
+<a href="#" class="bizarlink"><span data-content="Hello world!">Hello world!</span></a>
+<a href="#" class="bizarlink"><span data-content="Another world!">Hello world!</span></a>
+<div ng-controller='DeathrayMenuController'>
 <ul>
 <li class='menu-disabled-{{isDisabled}}' ng-click='stun()'>Change my color :)</li>
-
 </ul>
 <div/>
-
         <p>oops, jquery cookie</p>
-
         <div ng-controller="MyCtrl">
        <input type="text" ng-model="foo" placeholder="Enter something" />
        <input type="button" ng-click="doSomething()" value="Send" ng-disabled="foo == null" />
    </div>
        
-        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-	<div class="flipper">
-		<div class="front">
-			<img src=Images/H.gif  style="position:absolute; left: 500; top: 100; width: 35px; height: 50px;">
-		</div>
-		<div class="back">
-			<img src=Images/A.gif  style="position:absolute; left: 500; top: 100; width: 35px; height: 50px;">
-		</div>
-	</div>
+        
+<div class="flipcard h">
+    <div class="front">
+      This is the front side
+    <img src=Images/A.gif  style="position:absolute; left: 500; top: 100; width: 35px; height: 50px;">
+		
+    </div>
+    <div class="back">
+	  This is the back side
+    </div>
 </div>
-
-
-<script>
-$(document).ready(function(){
-    $("p").click(function(){
-
-
-        $.cookie.json = true;
-
-     var user = [{ name: "name", age: 25 },{ name: "name", age: 25 }]
-
-     user.push({ name: "hardik", age: 25 });
-
-$.cookie('user', user);
-var currentUser = $.cookie('user');
-alert('User name is ' + currentUser[2].name);
-    });
-});
-</script>
-
-
-
-
-
-
 <P>  The time on the server is ${serverTime}. </P>
-
 </div>
-
-
-
 </body>
 </html>

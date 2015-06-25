@@ -14,7 +14,7 @@ public class AutoLoginResponse {
     public String email;
     public String name;
     public String birthday;
-    //public int id;
+    public String id;
     
     
     @JsonProperty("first_name")
@@ -73,21 +73,14 @@ public class AutoLoginResponse {
 		this.birthday = birthday;
 	}
 
-	
-	
+	@JsonProperty("id")
+	public String getId() {
+		return id;
+	}
 
- 
- /*   
- @JsonProperty("id")
-    
-    public int id() 
- {
-        return id;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    
-    }
-    */
+	
 }

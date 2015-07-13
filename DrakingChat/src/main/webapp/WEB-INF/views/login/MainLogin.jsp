@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -122,12 +123,13 @@
                   
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form action="#" role="form">
+                       <form method="post" action="<c:url value='j_spring_security_check' />">
+                         <h6 style="color: red">${message}</h6>  
                                 <div class="input-group">
-                                   <input type="email" class="form-control" placeholder="Email Address" required>
-                                   <input type="password" class="form-control" placeholder="Password" required>
+                                   <input type="email" class="form-control" placeholder="Email Address" name="username" required>
+                                   <input type="password" class="form-control" placeholder="Password" name="password" required>
                                     <span class="input-group-btn">
-                                      <button class="btn btn-success btn-circle" type="submit">Login</button>
+                                      <button class="btn btn-success btn-circle" type="submit" value="login">Login</button>
                                     </span>                        
                                 </div>
                             </form>

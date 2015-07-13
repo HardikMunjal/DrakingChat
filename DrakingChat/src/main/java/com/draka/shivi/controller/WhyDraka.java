@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 	@Controller
-	@RequestMapping("/cars")
-	public class PartialControllerAngular {
+	@RequestMapping("/why")
+	public class WhyDraka {
 		
 		private static final Logger logger = LoggerFactory.getLogger(PartialControllerAngular.class);
 		
 		/**
 		 * Simply selects the home view to render by returning its name.
 		 */
-		 @RequestMapping("/layout")
-		    public String getCarPartialPage() {
-		        return "cars/layout";
+		 @RequestMapping("/draka")
+		    public String getWhyPartialPage() {
+		        return "why/draka";
 		    }
 		
 	}

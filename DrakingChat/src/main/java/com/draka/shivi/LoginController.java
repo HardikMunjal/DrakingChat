@@ -22,8 +22,9 @@ public class LoginController {
   
   
   
+  
   if (authfailed != null) {  
-   message = "Invalid username of password, try again !";  
+   message = "Invalid username or password, try again !";  
   } else if (logout != null) {  
    message = "Logged Out successfully, login again to continue !";  
   } else if (denied != null) {  
@@ -32,7 +33,7 @@ public class LoginController {
   }  
   
 
-  return new ModelAndView("login/login", "message", message);  
+  return new ModelAndView("login/MainLogin", "message", message);  
  }  
   
  
@@ -48,6 +49,6 @@ public class LoginController {
   
  @RequestMapping("403page")  
  public String ge403denied() {  
-  return "redirect:login/login?denied";  
+  return "redirect:login/MainLogin?denied";  
  }  
   }  

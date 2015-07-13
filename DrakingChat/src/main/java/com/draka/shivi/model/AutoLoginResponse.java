@@ -8,6 +8,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class AutoLoginResponse {
 
 	
+	
     public String first_name;
     public String last_name;
     public String gender;

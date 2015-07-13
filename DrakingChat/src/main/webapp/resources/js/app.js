@@ -11,15 +11,37 @@ App.config(['$routeProvider', function ($routeProvider) {
         controller: CarController
     });
 
-    $routeProvider.when('/trains', {
-        templateUrl: 'trains/layout',
+    $routeProvider.when('/SocialProfile', {
+        templateUrl: 'SocialProfile/UserProfile',
         controller: TrainController
     });
     
-    $routeProvider.when('/railwaystations', {
-        templateUrl: 'railwaystations/layout',
+    $routeProvider.when('/popularity', {
+        templateUrl: 'popularity/user',
         controller: RailwayStationController
     });
-
-    $routeProvider.otherwise({redirectTo: '/cars'});
+    $routeProvider.when('/why', {
+        templateUrl: 'why/draka',
+        controller: TrainController
+    });
+   
+    $routeProvider.otherwise({redirectTo: '/SocialProfile'});
 }]);
+
+App.controller('DataFetchControl', function ($scope, $http) {
+    $scope.ptis = [];
+    // Simple GET request example :
+    $http.get('/shivi/userDetails').
+            success(function (data, status, headers, config) {
+                // this callback will be called asynchronously
+                // when the response is available
+                $scope.ptis = data;
+                
+
+
+            }).
+            error(function (data, status, headers, config) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+});

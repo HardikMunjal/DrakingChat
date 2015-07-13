@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="https://www.facebook.com/dialog/oauth?client_id=758610000925041&redirect_uri=http://localhost:3000/shivi/FetchUserDetails/"><img src="login-fb2.jpg"></a>
+
 </body>
 </html>

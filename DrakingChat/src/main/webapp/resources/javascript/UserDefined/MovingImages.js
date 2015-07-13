@@ -13,26 +13,18 @@ function ask(){
 }
 
 function reset1(){
-clearTimeout(my_time);
-document.getElementsByClassName("example").style.left= "500px";
-document.getElementsByClassName("example").style.top= "100px";
+	
+	for(var i=0; i<14; i++){
+
+document.getElementsByClassName('example')[i].style.left= "200px";
+document.getElementsByClassName('example')[i].style.top= "100px";
 document.getElementById("msg").innerHTML="";
-
+	}
 }
 
 
 
 
-function move_img(str) {
-
-      for(var i=0; i<14; i++){
-
-var x=document.getElementsByClassName('example')[i].offsetTop;
-x= x +100;
-document.getElementsByClassName('example')[i].style.top= x + "px";
-        }
-
-}
 
 function disp(){
 
@@ -50,7 +42,7 @@ var x=document.getElementsByClassName('example')[i].offsetLeft;
 if(y < 120 ){y= y +step;
 document.getElementsByClassName('example')[i].style.top= y + "px"; // vertical movment
 }else{
-if(x < 500+(40*i)){x= x +step;
+if(x < 200+(20*i)){x= x +step;
 document.getElementsByClassName('example')[i].style.left= x + "px"; // horizontal movment
 }
 }

@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,8 @@ import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
@@ -25,7 +29,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.draka.shivi.model.AutoLoginResponse;
+import com.draka.shivi.model.User;
+import com.draka.shivi.dao.UserDao;
+
 
 
 
@@ -33,6 +41,9 @@ import com.draka.shivi.model.AutoLoginResponse;
 @Controller
 public class AutoLoginController {
 	
+	@Autowired
+	private UserDao userDao;
+
 	
 	@RequestMapping(value = "/AutoLogin", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -130,6 +141,38 @@ System.out.println(response);
 }
 
 
+
+@RequestMapping(value = "/saveUser", method = RequestMethod.GET)
+public ModelAndView saveContact(@ModelAttribute User user) {
 	
+    userDao.save(user);
+    
+ 
+   
+    return new ModelAndView("redirect:/template");
+}
+
+@RequestMapping(value = "/userDetails", method = RequestMethod.GET)
+public @ResponseBody User userDetails(HttpServletRequest request) {
+   
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String emailId = authentication.getName();
+    System.out.println("User Name : "+emailId);
+    User response = userDao.get(emailId);
+    
+   
+    
+    
+   /* ar.setFirstName(response.first_name);
+    ar.setLast_name(response.last_name);
+    ar.setName(response.name);
+    ar.setGender(response.gender);
+    ar.setId(response.id);
+    ar.setEmail(response.email);
+    */
+    return response;
+}
+
 
 }
+

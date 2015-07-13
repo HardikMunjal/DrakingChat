@@ -1,8 +1,116 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
+
 <html lang="en" ng-app="AngularSpringApp">
+
 <head>
+ <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    
+    <style>
+        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+    </style>
+    
+    <style>
+			body {
+				font-family: "Helvetica Neue", Helvetica;
+			}
+		
+			/* tell the SVG path to be a thin blue line without any area fill */
+			path {
+				stroke-width: 1;
+				fill: none;
+			}
+			
+			.data1 {
+				stroke: green;
+			}
+
+			.data2 {
+				stroke: orange;
+			}
+			
+			.axis {
+			  shape-rendering: crispEdges;
+			}
+
+			.x.axis line {
+			  stroke: lightgrey;
+			}
+
+			.x.axis .minor {
+			  stroke-opacity: .5;
+			}
+
+			.x.axis path {
+			  display: none;
+			}
+			
+			.x.axis text {
+				font-size: 10px;
+			}
+
+			.y.axis line, .y.axis path {
+			  fill: none;
+			  stroke: #000;
+			}
+			
+			.y.axis text {
+				font-size: 12px;
+			}
+
+			
+			
+		</style>
+
+<style>
+
+#sidebar-wrapper {
+  margin-left: -240px;
+  left: 240px;
+  width: 240px;
+  
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+ }
+ 
+</style>
+<style>
+body {
+    width:100px;
+	height:100px;
+  background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
+font-family: 'Raleway', sans-serif;
+}
+
+p {
+	color:#CCC;
+}
+
+.spacing {
+	padding-top:7px;
+	padding-bottom:7px;
+}
+.middlePage {
+	width: 680px;
+    height: 200px;
+    position: absolute;
+    top:220px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.logo {
+	color:#CCC;
+}</style>
+
 
 <!-- Angular js libraries -->
 <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
@@ -35,7 +143,7 @@
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/Flipcard.css" />">
 <link rel="stylesheet" href= "<c:url value="/resources/stylesheets/BackgroundBizzer.css" />">
 <script src="<c:url value="/resources/javascript/UserDefined/CookieOnPageLoading.js" />"></script>
-<script src="<c:url value="/resources/javascript/UserDefined/MovingImages.js" />"></script>
+
 <script src="<c:url value="/resources/javascript/UserDefined/Angular/AngularCart.js" />"></script>
 <script src="<c:url value="/resources/javascript/UserDefined/JavascriptCookiePush.js" />"></script>
 
@@ -56,7 +164,13 @@
 </head>
 
 
-<body>
+<body> 
+<div ng-controller="DataFetchControl">
+<c:url value="/j_spring_security_logout" var="logoutUrl" />  
+
+<div id="wrapper1">
+    <div id="sidebar-wrapper">
+
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -67,9 +181,9 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Hardik Munjal</a>
+			<a class="navbar-brand" href="#">{{ptis.first_name}} {{ptis.last_name}}</a>
 				<div class="profile-userpic">
-					<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p200x200/11083866_950312875013030_7885465492717904463_n.jpg?oh=7a30e797d1c5cb3f5a99ef2d9d4461c2&oe=55FAA592&__gda__=1441179641_cdd3fe3d799fc29e871a8dc95b1f3eaa" class="img-responsive" alt="">
+					<img ng-src="http://graph.facebook.com/{{ptis.sn_id}}/picture?type=large" class="img-responsive" alt="">
 				</div>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,7 +195,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
 					<ul class="dropdown-menu forAnimate" role="menu">
-						<li><a href="#">Action</a></li>
+						<li><a href="${logoutUrl}">Logout</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
 						<li class="divider"></li>
@@ -95,15 +209,21 @@
 		</div>
 	</div>
 </nav>
+</div>
 
 <div class="main">
 
   <div id="check"></div>
         <ul id="menu">
-  <li><a href="#/cars">Why Draka</a></li>
-  <li><a href="#/trains">Menu</a></li>
+  <li><a href="#/SocialProfile">Profile</a></li>
+  <li><a href="#/cars">Social</a></li>
+  <li><a href="#/popularity">Popularity</a></li>
+  <li><a href="/test">Friends Zone</a></li>
+  <li><a href="/3d">Games Zone</a></li>
+  <li><a href="#/trains">Wild Cards</a></li>
+  <li><a href="test">Testing</a></li>
   <li><a href="/grid">Grid</a></li>
-  <li><a href="/3d">3d transformation</a></li>
+  <li><a href="#/why">Why Draka</a></li>
         </ul> 
 
 <div id="wrapper">
@@ -114,7 +234,30 @@
         <li><a href="#/railwaystations">Circle</a></li>
     </ul>
     <hr class="" />
-    <div ng-view></div>
+    <div class="middlePage">
+
+
+<div class="panel panel-info">
+ 
+  <div class="panel-body">
+  
+  <div class="row">
+  
+
+
+
+ <div ng-view></div>
+ 
+    
+    
+</div>
+    
+</div>
+</div>
+
+
+    
+   
 
 </div>
 
@@ -131,6 +274,8 @@
 
  
 
+</div>
+</div>
 </div>
 </body>
 </html>

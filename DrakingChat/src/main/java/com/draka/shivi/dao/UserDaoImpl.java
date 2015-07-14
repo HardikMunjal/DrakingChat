@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,7 +22,9 @@ import org.springframework.stereotype.Repository;
 //import org.springframework.stereotype.Service;
 
 
+
 import com.draka.shivi.model.User;
+
 
 
 @Repository
@@ -31,6 +34,31 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	private DataSource dataSource;
 	    
+	@Override
+	public List<User> list() {
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+		// implementation details goes here...
+		String sql = "SELECT * FROM users";
+	    List<User> listContact = jdbcTemplate.query(sql, new RowMapper<User>() {
+	 
+	        @Override
+	        public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+	        	User user = new User();
+                user.setFirst_name(rs.getString("First_name"));
+                user.setLast_name(rs.getString("Last_name"));
+                user.setSn_id(rs.getString("sn_id"));
+                user.setBirthday(rs.getString("birthday"));
+                user.setGender(rs.getString("gender"));
+                user.setEmail(rs.getString("email"));
+                
+	            return user;
+	        }
+	 
+	    });
+	 
+	    return listContact;
+	}
+
 	
 	
 	@Override

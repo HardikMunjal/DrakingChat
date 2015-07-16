@@ -11,7 +11,7 @@
 
 <head>
  <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
-    
+
     <style>
         .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
     </style>
@@ -102,13 +102,13 @@ p {
 	padding-bottom:7px;
 }
 .middlePage {
-	width: 680px;
-    height: 200px;
+	width: 60%;
+    height: 25%;
     position: absolute;
-    top:220px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top:22%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
     margin: auto;
 }
 
@@ -234,12 +234,9 @@ p {
 
 <div id="wrapper">
 
-    <ul class="menu">
-        <li><a href="#/cars">Hist</a></li>
-        <li><a href="#/trains">Prof</a></li>
-        <li><a href="#/railwaystations">Circle</a></li>
-    </ul>
-    <hr class="" />
+   <br>
+   <br>
+    <br>
     <div class="middlePage">
 
 

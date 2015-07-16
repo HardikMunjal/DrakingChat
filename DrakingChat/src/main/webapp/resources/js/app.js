@@ -32,7 +32,7 @@ App.config(['$routeProvider', function ($routeProvider) {
     });
     $routeProvider.when('/users', {
         templateUrl: 'admin/users',
-        controller: CarController
+        controller: UserController
     });
 
    

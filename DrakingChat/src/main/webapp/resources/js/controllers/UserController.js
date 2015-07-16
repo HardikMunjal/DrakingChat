@@ -1,26 +1,22 @@
 'use strict';
 
-/**
- * CarController
- * @constructor
- */
-var CarController = function($scope, $http) {
-	
-	
-    $scope.fetchUsersList = function() {
-        $http.get('admin/listUser').success(function(userList){
-            $scope.users = userList;
-        });
-    };
 
-    $scope.addNewCar = function(newCar) {
-        $http.post('cars/addCar/' + newCar).success(function() {
-            $scope.fetchCarsList();
-        });
-        $scope.carName = '';
-    };
+function UserController($scope, $http, $routeParams) {
+	  
+	   // I can also use '/shivi/admin/listUser' instead of listUser
+	   
+	   $http.get('listUser').
+       success(function (data, status, headers, config) {
+           // this callback will be called asynchronously
+           // when the response is available
+           
+           $scope.users = data;
 
-
-
-    $scope.fetchFetchUsersList();
-};
+       }).
+       error(function (data, status, headers, config) {
+           // called asynchronously if an error occurs
+           // or server returns response with an error status.
+       });
+	   
+	   
+	}

@@ -11,7 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.draka.shivi.dao.UserDao;
 import com.draka.shivi.model.User;
 
-
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
 
 
 
@@ -39,11 +40,11 @@ public class AdminController {
 	
 	
 	@RequestMapping(value="/listUser")
-		public ModelAndView listContact(ModelAndView model) throws IOException{
+		public @ResponseBody List<User> listContact() throws IOException{
 	    List<User> listContact = userDao.list();
-	    model.addObject("listContact", listContact);
-	    model.setViewName("contact/ContactList");
-	    return model;
+	   
+	    
+	    return listContact;
 	}
 
 }

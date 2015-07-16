@@ -62,12 +62,26 @@ public class HomeController {
 	
 	
 	
+	 @RequestMapping("/demo")
+		public String homeDemo() {
+			return "why/draka";
+		}
+	 
 	
+	 @RequestMapping("/admin/admin/users")
+		public String getUserListing(){
+		    
+		   
+		    return "admin/users/UserListing";
+		}
+		
 	
 	@RequestMapping(value = "/testing", method = RequestMethod.GET)
 	public String homeTest() {
 		return "home";
 	}
+	
+	
 	
 	@RequestMapping(value = "/template", method = RequestMethod.GET)
 	public String homeT(Locale locale, Model model) {

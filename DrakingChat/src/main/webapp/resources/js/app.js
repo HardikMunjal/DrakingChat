@@ -16,6 +16,8 @@ App.config(['$routeProvider', function ($routeProvider) {
         controller: TrainController
     });
     
+   
+    
     $routeProvider.when('/popularity', {
         templateUrl: 'popularity/user',
         controller: RailwayStationController
@@ -24,6 +26,15 @@ App.config(['$routeProvider', function ($routeProvider) {
         templateUrl: 'why/draka',
         controller: TrainController
     });
+    $routeProvider.when('/test1', {
+        templateUrl: 'demo',
+        controller: TrainController
+    });
+    $routeProvider.when('/users', {
+        templateUrl: 'admin/users',
+        controller: CarController
+    });
+
    
     $routeProvider.otherwise({redirectTo: '/SocialProfile'});
 }]);

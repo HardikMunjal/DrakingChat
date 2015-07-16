@@ -2,13 +2,13 @@
 
 var AngularAdminApp = {};
 
-var App = angular.module('AngularAdminApp', ['AngularSpringApp.filters', 'AngularSpringApp.services', 'AngularSpringApp.directives']);
+var App = angular.module('AngularAdminApp', ['AngularAdminApp.filters', 'AngularAdminApp.services', 'AngularAdminApp.directives']);
 
 // Declare app level module which depends on filters, and services
 App.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/users', {
         templateUrl: 'admin/users',
-        controller: UserController
+        controller: CarController
     });
 
     $routeProvider.when('/SocialProfile', {

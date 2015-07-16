@@ -1,4 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="req" value="${pageContext.request}" />
+<c:set var="url">${req.requestURL}</c:set>
+<c:set var="base" value="${fn:substring(url, 0, fn:length(url) - fn:length(req.requestURI))}${req.contextPath}/" />
+
 <%@ page session="false" %>
 <!DOCTYPE html>
 
@@ -224,6 +229,7 @@ p {
   <li><a href="test">Testing</a></li>
   <li><a href="/grid">Grid</a></li>
   <li><a href="#/why">Why Draka</a></li>
+   <li><a href="#/test1">Checking</a></li>
         </ul> 
 
 <div id="wrapper">
@@ -261,14 +267,14 @@ p {
 
 </div>
 
-<script src="resources/js/lib/angular/angular.js"></script>
-<script src="resources/js/app.js"></script>
-<script src="resources/js/services.js"></script>
-<script src="resources/js/controllers/RailwayStationController.js"></script>
-<script src="resources/js/controllers/CarController.js"></script>
-<script src="resources/js/controllers/TrainController.js"></script>
-<script src="resources/js/filters.js"></script>
-<script src="resources/js/directives.js"></script>
+<script src="${base}/resources/js/lib/angular/angular.js"></script>
+<script src="${base}/resources/js/app.js"></script>
+<script src="${base}/resources/js/services.js"></script>
+<script src="${base}/resources/js/controllers/RailwayStationController.js"></script>
+<script src="${base}/resources/js/controllers/CarController.js"></script>
+<script src="${base}/resources/js/controllers/TrainController.js"></script>
+<script src="${base}/resources/js/filters.js"></script>
+<script src="${base}/resources/js/directives.js"></script>
          
          
 

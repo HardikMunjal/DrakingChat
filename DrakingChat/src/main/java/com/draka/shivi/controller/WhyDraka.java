@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 		
 		private static final Logger logger = LoggerFactory.getLogger(PartialControllerAngular.class);
 		
+		
 		/**
 		 * Simply selects the home view to render by returning its name.
 		 */
@@ -28,5 +29,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 		    public String getWhyPartialPage() {
 		        return "why/draka";
 		    }
+		
 		
 	}

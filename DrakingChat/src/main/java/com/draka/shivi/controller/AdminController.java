@@ -35,12 +35,8 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping(value="/users")
-	public ModelAndView getUserListing(ModelAndView model) throws IOException{
-	    
-	    model.setViewName("admin/users/UserListing");
-	    return model;
-	}
+	
+	
 	
 	@RequestMapping(value="/listUser")
 		public ModelAndView listContact(ModelAndView model) throws IOException{

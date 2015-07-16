@@ -8,7 +8,7 @@
 <%@ page session="false" %>
 <!DOCTYPE html>
 
-<html lang="en" ng-app="AngularAdminApp">
+<html lang="en" ng-app="AngularSpringApp">
 
 <head>
 
@@ -84,13 +84,17 @@
 
 
 
- <script src="${base}/resources/js/lib/angular/angular.js"></script>
-<script src="${base}/resources/js/adminApp.js"></script>
+<script src="${base}/resources/js/lib/angular/angular.js"></script>
+<script src="${base}/resources/js/app.js"></script>
 <script src="${base}/resources/js/services.js"></script>
-<script src="${base}/resources/js/UserController.js"></script>
+<script src="${base}/resources/js/controllers/RailwayStationController.js"></script>
+<script src="${base}/resources/js/controllers/CarController.js"></script>
+<script src="${base}/resources/js/controllers/TrainController.js"></script>
 <script src="${base}/resources/js/filters.js"></script>
 <script src="${base}/resources/js/directives.js"></script>
          
+         
+
 
 </div>
 </div>

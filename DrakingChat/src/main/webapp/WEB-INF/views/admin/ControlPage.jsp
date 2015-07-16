@@ -40,10 +40,8 @@
 
 <body> 
 
-<c:url value="/j_spring_security_logout" var="logoutUrl" />  
 
 
-<div class="main">
 
 
         <ul id="menu">
@@ -51,40 +49,19 @@
   <li><a href="#/cars">Social</a></li>
           </ul> 
 
-<div id="wrapper">
+
 
   
-    <hr class="" />
-    <div class="middlePage">
-
-
-<div class="panel panel-info">
- 
-  <div class="panel-body">
-  
-  <div class="row">
-  
-
-
-
- <div ng-view></div>
- 
-    
-    
-</div>
-    
-</div>
-</div>
-
-
     
    
 
-</div>
 
 
+  
+  
 
-<script src="${base}/resources/js/lib/angular/angular.js"></script>
+ <div ng-view></div>
+ <script src="${base}/resources/js/lib/angular/angular.js"></script>
 <script src="${base}/resources/js/app.js"></script>
 <script src="${base}/resources/js/services.js"></script>
 <script src="${base}/resources/js/controllers/RailwayStationController.js"></script>
@@ -93,12 +70,5 @@
 <script src="${base}/resources/js/controllers/UserController.js"></script>
 <script src="${base}/resources/js/filters.js"></script>
 <script src="${base}/resources/js/directives.js"></script>
-         
-         
-
-
-</div>
-</div>
-
 </body>
 </html>

@@ -1,0 +1,38 @@
+ fieldSet
+    {
+      border: solid black thin;
+      width: 500px;
+      background-color: #ffffb0;
+    }
+    fieldset{
+        border: none;
+        margin: 100px 0 0 -10px;
+        padding: 0;
+        
+    }
+    legend {
+        font-size: 10px;
+        background-color: #7FFF00;
+        color: white;
+        width: 500px;
+       padding: 4px;
+        font-weight: bold;
+    }
+        label.field {
+            text-align: right;
+            width: 200px;
+            float: left;
+            font-weight: bold;
+        }
+    input.textbox-300 {
+        width: 300px;
+        float: left;
+    }
+    fieldset p {
+        clear: both;
+        padding: 5px;
+    }
+    label span, .required{
+        color: red;
+        font-weight: bold;
+    }

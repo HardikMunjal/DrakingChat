@@ -74,7 +74,7 @@ th {
                 
                 </tr>
             </table></td>
-                  <td><button>Play</button></td>
+                  <td><a href="match/{{y.matchid}}">Play</a></td>
                 </tr>
             </table> </td>
    
@@ -89,6 +89,8 @@ th {
   </li>
  
 </ul>
+
+
 
 </div>
 

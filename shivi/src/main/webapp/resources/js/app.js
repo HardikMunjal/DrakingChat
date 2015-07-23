@@ -39,7 +39,7 @@ App.config(['$routeProvider', function ($routeProvider) {
 App.controller('DataFetchControl', function ($scope, $http) {
     $scope.ptis = [];
     // Simple GET request example :
-    $http.get('/shivi/userDetails').
+    $http.get('/DrakingChat/userDetails').
             success(function (data, status, headers, config) {
                 // this callback will be called asynchronously
                 // when the response is available

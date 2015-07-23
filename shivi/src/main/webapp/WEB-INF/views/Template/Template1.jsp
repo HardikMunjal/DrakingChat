@@ -1,4 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="req" value="${pageContext.request}" />
+<c:set var="url">${req.requestURL}</c:set>
+<c:set var="base" value="${fn:substring(url, 0, fn:length(url) - fn:length(req.requestURI))}${req.contextPath}/" />
+
 <%@ page session="false" %>
 <!DOCTYPE html>
 
@@ -6,7 +11,7 @@
 
 <head>
  <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
-    
+
     <style>
         .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
     </style>
@@ -25,6 +30,7 @@
 			.data1 {
 				stroke: green;
 			}
+
 			.data2 {
 				stroke: orange;
 			}
@@ -32,12 +38,15 @@
 			.axis {
 			  shape-rendering: crispEdges;
 			}
+
 			.x.axis line {
 			  stroke: lightgrey;
 			}
+
 			.x.axis .minor {
 			  stroke-opacity: .5;
 			}
+
 			.x.axis path {
 			  display: none;
 			}
@@ -45,6 +54,7 @@
 			.x.axis text {
 				font-size: 10px;
 			}
+
 			.y.axis line, .y.axis path {
 			  fill: none;
 			  stroke: #000;
@@ -53,11 +63,13 @@
 			.y.axis text {
 				font-size: 12px;
 			}
+
 			
 			
 		</style>
 
 <style>
+
 #sidebar-wrapper {
   margin-left: -240px;
   left: 240px;
@@ -80,23 +92,26 @@ body {
   background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
 font-family: 'Raleway', sans-serif;
 }
+
 p {
 	color:#CCC;
 }
+
 .spacing {
 	padding-top:7px;
 	padding-bottom:7px;
 }
 .middlePage {
-	width: 680px;
-    height: 200px;
+	width: 60%;
+    height: 25%;
     position: absolute;
-    top:220px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top:22%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
     margin: auto;
 }
+
 .logo {
 	color:#CCC;
 }</style>
@@ -182,6 +197,20 @@ p {
 				<li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
 				<li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
 				<li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				
+				
+				
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b>Games Corner</b> <span class="caret"></span><span style="font-size:26px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-large"></span></a>
+					<ul class="dropdown-menu forAnimate" >
+						
+						<li><a href="game/cricket">Cricket</a></li>
+						<li><a href="#">Football</a></li>
+						<li><a href="#">Movies</a></li>
+						
+					</ul>
+					
+				<li></li>
+				
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
 					<ul class="dropdown-menu forAnimate" role="menu">
@@ -194,6 +223,8 @@ p {
 						<li><a href="#">One more separated link</a></li>
 					</ul>
 				</li>
+				
+				
 				
 			</ul>
 		</div>
@@ -214,16 +245,17 @@ p {
   <li><a href="test">Testing</a></li>
   <li><a href="/grid">Grid</a></li>
   <li><a href="#/why">Why Draka</a></li>
+   <li><a href="#/test1">Checking</a></li>
+   
+   
         </ul> 
+      
 
 <div id="wrapper">
 
-    <ul class="menu">
-        <li><a href="#/cars">Hist</a></li>
-        <li><a href="#/trains">Prof</a></li>
-        <li><a href="#/railwaystations">Circle</a></li>
-    </ul>
-    <hr class="" />
+   <br>
+   <br>
+    <br>
     <div class="middlePage">
 
 
@@ -251,15 +283,15 @@ p {
 
 </div>
 
-<script src="resources/js/lib/angular/angular.js"></script>
-<script src="resources/js/app.js"></script>
-<script src="resources/js/services.js"></script>
-<script src="resources/js/controllers/RailwayStationController.js"></script>
-<script src="resources/js/controllers/CarController.js"></script>
-<script src="resources/js/controllers/TrainController.js"></script>
-<script src="resources/js/controllers/UserController.js"></script>
-<script src="resources/js/filters.js"></script>
-<script src="resources/js/directives.js"></script>
+<script src="${base}/resources/js/lib/angular/angular.js"></script>
+<script src="${base}/resources/js/app.js"></script>
+<script src="${base}/resources/js/services.js"></script>
+<script src="${base}/resources/js/controllers/RailwayStationController.js"></script>
+<script src="${base}/resources/js/controllers/CarController.js"></script>
+<script src="${base}/resources/js/controllers/TrainController.js"></script>
+<script src="${base}/resources/js/controllers/UserController.js"></script>
+<script src="${base}/resources/js/filters.js"></script>
+<script src="${base}/resources/js/directives.js"></script>
          
          
 

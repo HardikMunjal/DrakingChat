@@ -59,7 +59,7 @@ public class AutoLoginController {
 		String code = request1.getParameter("code");
 		RestTemplate restTemplate = new RestTemplate();
    
-  String url="https://graph.facebook.com/oauth/access_token?client_id=758610000925041&redirect_uri=http://localhost:3000/shivi/FetchUserDetails/&client_secret=fffb8c8fa466739691d889f5d570cd7b&code="+code+""; 
+  String url="https://graph.facebook.com/oauth/access_token?client_id=758610000925041&redirect_uri=http://192.168.200.48:3000/DrakingChat/FetchUserDetails/&client_secret=fffb8c8fa466739691d889f5d570cd7b&code="+code+""; 
 
   
   MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();

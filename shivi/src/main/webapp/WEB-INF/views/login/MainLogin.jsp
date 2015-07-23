@@ -139,7 +139,7 @@
                    
                     </div>
                      <button type="button" class="btn btn-warning">Sign Up</button>
-  <a class="btn btn-info" href="https://www.facebook.com/dialog/oauth?client_id=758610000925041&redirect_uri=http://localhost:3000/shivi/FetchUserDetails/">Sync with facebook</a>
+  <a class="btn btn-info" href="https://www.facebook.com/dialog/oauth?client_id=758610000925041&redirect_uri=http://192.168.200.48:3000/DrakingChat/FetchUserDetails/">Sync with facebook</a>
        
                   </div>              
                 </div>

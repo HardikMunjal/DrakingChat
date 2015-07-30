@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+ul#menu {
+    padding: 10px;
+    
+}
+
+ul#menu li {
+    display: inline-block;
+}
+
+ul#menu li a {
+    background-color: black;
+    color: white;
+    padding: 2% 5%;
+    text-decoration: none;
+    border-radius: 1% 1% 0 0;
+    
+}
+
+ul#menu li a:hover {
+    background-color: orange;
+}
+        

@@ -68,6 +68,8 @@
 <script src="${base}/resources/js/controllers/CarController.js"></script>
 <script src="${base}/resources/js/controllers/TrainController.js"></script>
 <script src="${base}/resources/js/controllers/UserController.js"></script>
+<script src="${base}/resources/js/controllers/CricketOngoingMatchesController.js"></script>
+
 <script src="${base}/resources/js/filters.js"></script>
 <script src="${base}/resources/js/directives.js"></script>
 </body>

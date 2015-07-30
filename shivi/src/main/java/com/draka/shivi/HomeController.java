@@ -67,8 +67,18 @@ public class HomeController {
 			return "why/draka";
 		}
 	 
+	 
+	 
+
+	 @RequestMapping("/template")
+		public String templateApp() {
+			return "template";
+		}
+	 
+	 
+	 
 	
-	 @RequestMapping("/admin/admin/users")
+	 @RequestMapping("/admin/admin/users/bla")
 		public String getUserListing(){
 		    
 		   
@@ -100,7 +110,13 @@ public class HomeController {
 		
 		return "Template/Template1";
 	}
-	
+
+	 @RequestMapping("game/cricket/cars/layout")
+		public String getUsersssListing(){
+		    
+		   
+		    return "car";
+		}
 	
 
 	

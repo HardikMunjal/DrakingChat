@@ -199,16 +199,16 @@ p {
 				<li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 				
 				
-				
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b>Games Corner</b> <span class="caret"></span><span style="font-size:26px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-large"></span></a>
+			
+					<a href="game" class="dropdown-toggle" data-toggle="dropdown"> <b>Games Corner</b> <span class="caret"></span><span style="font-size:26px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-large"></span></a>
 					<ul class="dropdown-menu forAnimate" >
 						
 						<li><a href="game/cricket">Cricket</a></li>
-						<li><a href="#">Football</a></li>
-						<li><a href="#">Movies</a></li>
+						<li><a href="game/football">Football</a></li>
+						<li><a href="game/movies">Movies</a></li>
 						
 					</ul>
-					
+			
 				<li></li>
 				
 				<li class="dropdown">
@@ -290,6 +290,8 @@ p {
 <script src="${base}/resources/js/controllers/CarController.js"></script>
 <script src="${base}/resources/js/controllers/TrainController.js"></script>
 <script src="${base}/resources/js/controllers/UserController.js"></script>
+<script src="${base}/resources/js/controllers/CricketOngoingMatchesController.js"></script>
+
 <script src="${base}/resources/js/filters.js"></script>
 <script src="${base}/resources/js/directives.js"></script>
          

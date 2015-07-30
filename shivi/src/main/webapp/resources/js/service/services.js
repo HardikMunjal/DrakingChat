@@ -2,6 +2,6 @@
 
 /* Services */
 
-var AppServices = angular.module('AngularAdminApp.services', []);
+var AppServices = angular.module('myApp.services', []);
 
 AppServices.value('version', '0.1');

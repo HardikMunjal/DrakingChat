@@ -36,7 +36,12 @@ public class AdminController {
 	}
 	
 	
-	
+	 @RequestMapping("/admin/users")
+		public String getUserListing(){
+		    
+		   
+		    return "admin/users/UserListing";
+		}	
 	
 	
 	@RequestMapping(value="/listUser")

@@ -2,7 +2,7 @@
 
 /* Filters */
 
-var AppFilters = angular.module('AngularAdminApp.filters', []);
+var AppFilters = angular.module('myApp.filters', []);
 
 AppFilters.filter('interpolate', ['version', function (version) {
     return function (text) {

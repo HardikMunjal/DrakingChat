@@ -1,7 +1,7 @@
 'use strict';
 
 
-function UserController($scope, $http, $routeParams) {
+var UserController = function UserController($scope, $http, $routeParams) {
 	  
 	   // I can also use '/shivi/admin/listUser' instead of listUser
 	   

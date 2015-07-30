@@ -1,32 +1,42 @@
 package com.draka.shivi.controller;
 
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
+
 
 
 
 
 	@Controller
-	@RequestMapping("/game")
+	@RequestMapping("/game/cricket")
 	public class GameController {
 		
+		 @RequestMapping("/")
+		    public String getGamesPage() {
+		        return "games/cricket/CricketHome";
+		    }
+		
+		 
 		 @RequestMapping("/cricket")
+		    public String getCricketHomePage() {
+		        return "games/cricket/CricketHome";
+		    }
+		 
+		 @RequestMapping("/main")
 		    public String getCricketMainPage() {
 		        return "games/cricket/main";
 		    }
-		 @RequestMapping("/cricket/MatchShedule")
+		 
+		
+		 
+		 @RequestMapping("/MatchShedule")
 		    public String getCricketMatchShedule() {
-		        return "games/cricket/MatchShedule";
+		        return "games/cricket/MatchSchedule";
 		    }
+		 
 		 @RequestMapping("/test")
 		    public String test() {
 		        return "games/cricket/test";
